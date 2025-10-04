@@ -138,7 +138,7 @@ public class TeleOpMain extends LinearOpMode {
         // Set direction of all motors                       //
         //***************************************************//
 
-//        FLMoto.setDirection(DcMotorSimple.Direction.REVERSE);
+        FLMoto.setDirection(DcMotorSimple.Direction.REVERSE);
         FRMoto.setDirection(DcMotorSimple.Direction.FORWARD);
         BLMoto.setDirection(DcMotorSimple.Direction.REVERSE);
         BRMoto.setDirection(DcMotorSimple.Direction.FORWARD);
@@ -372,8 +372,7 @@ public class TeleOpMain extends LinearOpMode {
             {
                 //Set Wheels into Strafe Position
                 FRMoto.setPower(gamepad1.left_trigger * reduceSpeed);
-//                FLMoto.setPower(-gamepad1.left_trigger * reduceSpeed);
-                //BRMoto.setPower(-gamepad1.left_trigger * 0.5);
+                FLMoto.setPower(-gamepad1.left_trigger * reduceSpeed);
                 BRMoto.setPower(-gamepad1.left_trigger * reduceSpeed);
                 BLMoto.setPower(gamepad1.left_trigger * reduceSpeed);
 
@@ -385,8 +384,7 @@ public class TeleOpMain extends LinearOpMode {
             {
                 //Set Wheels into Strafe Position
                 FRMoto.setPower(-gamepad1.right_trigger);
-//                FLMoto.setPower(gamepad1.right_trigger);
-                //BRMoto.setPower(gamepad1.right_trigger * 0.5);
+                FLMoto.setPower(gamepad1.right_trigger);
                 BRMoto.setPower(gamepad1.right_trigger);
                 BLMoto.setPower(-gamepad1.right_trigger);
 
