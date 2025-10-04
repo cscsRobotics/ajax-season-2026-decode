@@ -1,4 +1,4 @@
-name: build (AjaxBuildAndTest)
+name: build
 
 on:
   push:
