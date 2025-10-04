@@ -5,3 +5,4 @@
 This is the code for the Coral Springs Charter School's Ajax Robotics team for the 2025-2026 season (Decode Season)
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute code.
+
