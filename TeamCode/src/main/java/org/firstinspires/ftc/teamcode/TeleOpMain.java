@@ -102,22 +102,22 @@ public class TeleOpMain extends LinearOpMode {
         //BR and FR motors were mapped incorrectly on driver hub
         //Remapped FR back to "FRMoto", and BR back to "BRMoto" in the code to avoid confusion.
         //Drive Wheels
-//        DcMotor FLMoto = hardwareMap.dcMotor.get("FLMoto");
+        DcMotor FLMoto = hardwareMap.dcMotor.get("FLMoto");
         DcMotor FRMoto = hardwareMap.dcMotor.get("FRMoto"); //Was BR
         DcMotor BLMoto = hardwareMap.dcMotor.get("BLMoto");
         DcMotor BRMoto = hardwareMap.dcMotor.get("BRMoto"); //Was FR
 
 
-        slider = hardwareMap.dcMotor.get("slider");
-        climb = hardwareMap.dcMotor.get("climb");
-        hang = hardwareMap.dcMotor.get("hang");
+        //slider = hardwareMap.dcMotor.get("slider");
+        //climb = hardwareMap.dcMotor.get("climb");
+       // hang = hardwareMap.dcMotor.get("hang");
 
-        angle = hardwareMap.servo.get("angle");
-        rightClaw = hardwareMap.servo.get("rightClaw");
-        leftClaw = hardwareMap.servo.get("leftClaw");
-        finger = hardwareMap.servo.get("finger");
+       // angle = hardwareMap.servo.get("angle");
+       // rightClaw = hardwareMap.servo.get("rightClaw");
+        //leftClaw = hardwareMap.servo.get("leftClaw");
+        //finger = hardwareMap.servo.get("finger");
 
-        color = hardwareMap.get(NormalizedColorSensor.class, "Csensor");
+       // color = hardwareMap.get(NormalizedColorSensor.class, "Csensor");
 
 
         // Blinkin
@@ -145,25 +145,12 @@ public class TeleOpMain extends LinearOpMode {
 
 
 
-        climb.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        climb.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        climb.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        climb.setTargetPosition(0);
 
-        hang.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        hang.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        hang.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        hang.setTargetPosition(0);
 
-        slider.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        slider.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        slider.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        slider.setTargetPosition(0);
-
-        rightClaw.setPosition(rightClawClosed);
-        leftClaw.setPosition(leftClawClosed);
-        angle.setPosition(anglePosition);
-        finger.setPosition(fingerstart);
+        //rightClaw.setPosition(rightClawClosed);
+        //leftClaw.setPosition(leftClawClosed);
+        //angle.setPosition(anglePosition);
+        //finger.setPosition(fingerstart);
 
         // Wait for the start of TeleOp
         waitForStart();
@@ -218,7 +205,7 @@ public class TeleOpMain extends LinearOpMode {
           outPosition = 0;
           sliderPosition = 0;
        }*/
-
+/*
             //brings arm to start position aswell as angle
             if (gamepad2.dpad_up)
             {
@@ -226,7 +213,7 @@ public class TeleOpMain extends LinearOpMode {
                 //   slider.setTargetPosition(sliderPosition);
                 //   slider.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 //   slider.setPower(0.2);
-                angle.setPosition(angleStartPosition);
+                //angle.setPosition(angleStartPosition);
 
                 //   armMoto.setTargetPositionTolerance(10);
 
@@ -379,7 +366,7 @@ public class TeleOpMain extends LinearOpMode {
             //  Speed Up Overall Speed
             //  reduceSpeed = 1.5;
             //   }
-
+*/
             //Strafe Left
             if (gamepad1.left_trigger > 0)
             {
@@ -408,11 +395,11 @@ public class TeleOpMain extends LinearOpMode {
             else
             {
                 FRMoto.setPower(-gamepad1.right_stick_y);  //FL
-//                FLMoto.setPower(-gamepad1.left_stick_y);  //BR
+                FLMoto.setPower(-gamepad1.left_stick_y);  //BR
                 BRMoto.setPower(-gamepad1.right_stick_y); //BL
                 BLMoto.setPower(-gamepad1.left_stick_y); //FR
             }
-
+/*
             //climb claw - lift robot
             if(gamepad1.right_bumper == true)
             {
@@ -480,7 +467,7 @@ public class TeleOpMain extends LinearOpMode {
                 hang.setTargetPosition(-250);
                 hang.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 hang.setPower(0.3);
-            }
+            } */
         }
     }
 }
